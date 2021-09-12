@@ -22,9 +22,9 @@ const startServer = () => {
     })
     silence.save((err, saved) => {
         if (err) return console.error(err);
-        console.log('saved wertey2', saved);
+        console.log('saved', saved);
     })
-    console.log('silence wertey', silence)
+    console.log('silence', silence)
 }
 
 app.get('/test', (req, res) => {
