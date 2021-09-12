@@ -1,14 +1,21 @@
 const express = require('express');
+const { connectDb } = require('./helpers/db');
+const { port, host, db } = require('./configuration');
 const app = express();
 
-const port = process.env.PORT;
-const host = process.env.HOST;
+const startServer = () => {
+    app.listen(port, () => {
+        console.log('Started api server on port', port);
+        console.log('Started api server on host', host);
+        console.log('mongoo', db);
+    })
+}
 
 app.get('/test', (req, res) => {
     res.send('Our api server is working correctly');
 })
 
-app.listen(port, () => {
-    console.log('Started api server on port', port);
-    console.log('Started api server on host', host);
-})
+connectDb()
+    .on('error', console.log)
+    .on('disconnect', connectDb)
+    .once('open', startServer);
