@@ -25,10 +25,6 @@ const startServer = () => {
         console.log('saved', saved);
     })
     console.log('silence', silence)
-    // Post.find((err, post) => {
-    //     if (err) return console.error(err);
-    //     console.log('post', post)
-    // })
 }
 
 app.get('/test', (req, res) => {
