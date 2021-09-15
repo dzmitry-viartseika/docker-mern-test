@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload. Wertey
+          Edit <code>src/App.js</code> and save to reload. Wertey 2222 wertey
         </p>
         <a
           className="App-link"
