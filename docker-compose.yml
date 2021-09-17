@@ -46,11 +46,12 @@ services:
     container_name: realworld-docker-auth-db
     volumes:
       - mongodb_auth:/data/db
+
   nginx:
-    image: nginx:stable-apline
-    container_name: realword-docker-nginx
+    image: nginx:1.14-alpine
+    container_name: realworld-docker-nginx
     ports:
-      - "8080"
+      - "80:80"
     volumes:
       - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
     depends_on:
