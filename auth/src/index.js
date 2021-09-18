@@ -11,8 +11,11 @@ const startServer = () => {
     })
 }
 
-app.get('/test', (req, res) => {
-    res.send('Our auth service is working correctly');
+app.get('/api/currentUser', (req, res) => {
+    res.json({
+        id: '1234',
+        email: 'foo@gmail.com'
+    })
 })
 
 connectDb()
