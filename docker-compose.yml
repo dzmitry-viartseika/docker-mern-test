@@ -51,7 +51,7 @@ services:
     image: nginx:1.14-alpine
     container_name: realworld-docker-nginx
     ports:
-      - "80:80"
+      - "81:81"
     volumes:
       - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
     depends_on:
