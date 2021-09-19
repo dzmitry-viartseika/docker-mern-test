@@ -15,6 +15,7 @@ const startServer = () => {
     app.listen(port, () => {
         console.log('Started api server on port', port);
         console.log('Started api server on host', host);
+        console.log('Started authApiUrl server on host', authApiUrl);
         console.log('mongoo', db);
     })
 
@@ -29,7 +30,13 @@ const startServer = () => {
 }
 
 app.get('/test', (req, res) => {
-    res.send('Our api server is working correctly');
+    res.send('Our API server is working correctly');
+})
+
+app.get('/api/testapidata', (req, res) => {
+    res.json({
+        testwithapi: true,
+    })
 })
 
 app.get('/testwithcurrentuser', (req, res) => {
